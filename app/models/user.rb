@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     user.login password if user
   end
 
-  def login
+  def login password
     authenticate(password) && set_token && save! && token
   end
 
