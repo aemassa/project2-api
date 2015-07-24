@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::API
+  include ActionController::HttpAuthentication::Token::ControllerMethods
+  include ActionController::Serialization
+
   before_action :authenticate
   #run authenticate before you run any action
 
