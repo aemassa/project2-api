@@ -20,25 +20,31 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users, each_serializer: UserSerializer
   end
+  # updated 8-3-15
 
   # GET /users/1
   # GET /users/1.json
-  def show
-    render json: @user
+    def show
+    if current_user.id == params[:id].to_i
+      render json: current_user, serializer: CurrentUserSerializer
+    else
+      render json: User.find(params[:id])
+    end
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_credentials)
-
+    @user.person = Person.new(person_credentials)
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: @user, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: @person.errors, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /users/1
@@ -69,6 +75,10 @@ class UsersController < ApplicationController
 
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def person_params
+      params.require(:credentials).permit(:name)
     end
 
     def user_params
