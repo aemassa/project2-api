@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_one :person, autosave: true
   has_secure_password
   # adds both pw and pw confirmation virtual attributes, as well as an authenticate method. see ActiveModel::Secure Password documentation.
 
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
     user.login password if user
   end
 
-  def login password
+  def login (password)
     authenticate(password) && set_token && save! && token
   end
 
