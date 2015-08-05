@@ -38,11 +38,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_credentials)
-    @user.person = Person.new(person_credentials)
+    @user.profile = Profile.new(profile_params)
     if @user.save
       render json: @user, status: :created
     else
-      render json: @person.errors, status: :unprocessable_entity
+      render json: @user.errors, status: :unprocessable_entity
     end
 
   end
@@ -77,8 +77,12 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    def person_params
+    def person_credentials
       params.require(:credentials).permit(:name)
+    end
+
+    def profile_params
+      params.require(:profile).permit(:name)
     end
 
     def user_params
