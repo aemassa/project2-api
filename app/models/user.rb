@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_one :profile, autosave: true
-  has_many :items
-  has_many :events, through: :items
+  has_many :rsvps
+  has_many :events, through: :rsvps
   has_secure_password
   # adds both pw and pw confirmation virtual attributes, as well as an authenticate method. see ActiveModel::Secure Password documentation.
 
