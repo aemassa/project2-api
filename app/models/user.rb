@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_one :profile, autosave: true
   has_many :rsvps
   has_many :events, through: :rsvps
+  has_many :events_created, inverse_of: :created_by, class_name: Event
   has_secure_password
   # adds both pw and pw confirmation virtual attributes, as well as an authenticate method. see ActiveModel::Secure Password documentation.
 
