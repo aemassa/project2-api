@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
   def create
     event = Event.create(event_params)
+    event.created_by = current_user
     if event.save
       render json: event
     else
