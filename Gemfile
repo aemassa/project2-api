@@ -16,6 +16,8 @@ gem 'active_model_serializers'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'byebug', :group => :development
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

@@ -11,7 +11,7 @@ class RsvpsController < ApplicationController
   end
 
   def create
-    rsvp = Rsvp.create(rsvp_params)
+    rsvp = current_user.rsvps.create(rsvp_params)
     if rsvp.save
       render json: rsvp
     else
