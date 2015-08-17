@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   post '/login/' => 'users#login'
   patch '/events/:id' => 'events#update'
+  patch '/rsvps/:id' => 'rsvps#update'
   resources :users, except: [:new, :edit]
   resources :events, :rsvps
   # The priority is based upon order of creation: first created -> highest priority.
