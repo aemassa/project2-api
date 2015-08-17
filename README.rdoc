@@ -1,28 +1,47 @@
-== README
+# Gather
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gather is an app that helps uses plan and attend dinner parties and potluck events. Users can create and RSVP to events, indicate what item(s) they will bring, and see other users' RSVPs and potluck items.
 
-Things you may want to cover:
+Link to front end:
 
-* Ruby version
+Repo: https://github.com/aemassa/project2-frontend
 
-* System dependencies
+App:
 
-* Configuration
+Link to back end:
 
-* Database creation
+Repo: https://github.com/aemassa/project2-api
 
-* Database initialization
+App:
 
-* How to run the test suite
+## Technologies Used
 
-* Services (job queues, cache servers, search engines, etc.)
+### Front End
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- AJAX
+- Bootstrap
+- Handlebars
 
-* Deployment instructions
+### Back End
+- Ruby
+- Rails
+- PostgreSQL
 
-* ...
+## Next Steps
+- Implement update and delete actions for events.
+- Make an "invitations" table and update functionality so that ultimately, users can only see and update events that they have either created or been invited to.
+- Style the front end, especially the My Events page.
+- Show a separate page for each of the user's events.
+- Enable users to log out of the application.
+- Clean up/refactor code!
 
+## Planning Documents
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Wireframes: https://moqups.com/#!/edit/aemassa/VyPL8gZC
+
+User Stories: https://github.com/aemassa/project2-frontend/blob/master/user_stories.txt
+
+Entity Relationship Diagram: https://drive.draw.io/#G0B-pYNCnNAMa5X0tLMUxVcTRVYkE
